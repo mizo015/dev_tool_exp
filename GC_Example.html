@@ -1,0 +1,56 @@
+<html>
+<head>
+	<style>
+		.bar{
+			height: 20px;
+			border:1px solid #d9d9d9;
+			width: 4px;
+			margin: 10px;
+		}
+		.bar.slow{
+			background: red;
+		}
+		.bar.fast{
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<button id="start" type="button">Start</button>
+	<button id="reset" type="button">Reset</button><br/>
+
+	Fast: <div class="bar fast"></div>
+	Slow: <div class="bar slow"></div>
+
+	<script type="text/javascript">
+		var startBtn = document.querySelector('#start'),
+			slowBar  = document.querySelector('.slow'),
+			fastBar  = document.querySelector('.fast'),
+			limit 	 = 1000000;
+
+		startBtn.addEventListener('click', function(){
+			slow();
+			fast();
+		});
+
+		function slow(){
+			var array = [];
+			for (var i = 0; i < limit; i++) {
+				array.push(i);
+			}
+			// slowBar.style.width = 1000 + 'px';
+			console.log('Slow Func Done');
+		}
+
+		function fast(){
+			var array = new Array(limit);
+			for (var i = 0; i < limit; i++) {
+				array[i] = i;
+			}
+
+			// fastBar.style.width = 1000 + 'px';
+			console.log('Fast Func Done');
+		}
+	</script>
+</body>
+</html>
